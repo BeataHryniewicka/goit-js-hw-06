@@ -12,3 +12,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const list = document.querySelector(`ul#gallery`);
+//dla każdego elementu tablicy ingredients:
+images.forEach((image) => {
+  //Utworzy oddzielny element <li>
+  const item = document.createElement("li");
+  //Doda do elementu klasę item.
+  item.classList.add(`item`);
+  list.append(item);
+  console.log(item);
+});
