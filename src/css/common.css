@@ -23,14 +23,22 @@ button {
   cursor: pointer;
 }
 
-.liClass {
+.gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
+}
+.liClass {
+  list-style-type: none;
+  margin-top: 10rem;
 }
 
 .imgClass {
-  border: 10px solid rgb(190, 33, 33);
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   border-radius: 30px;
-  max-width: 350px;
+  max-width: 15rem;
+  height: 10rem;
 }
