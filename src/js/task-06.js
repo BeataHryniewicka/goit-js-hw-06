@@ -5,15 +5,14 @@
 
 const inputText = document.querySelector(`#validation-input`);
 
-textInput.addEventListener("blur", () => {
-    inputText.value.length < inputText.dataset.length?inputText.style.border = "rgba(255,255,255,0.5)":inputText.style.border = " #f44336"
+inputText.style.color = ("red");
+
+ inputText.addEventListener("blur", () => {
+   inputText.value.length < +inputText.dataset.length
+   ?inputText.classList.add(`invalid`)
+   :inputText.classList.add('valid');
 });
 
 
-// const inputEl = document.getElementById('validation-input');
-
-// inputEl.addEventListener('blur', () => {
-//   inputEl.value.length < +inputEl.dataset.length
-//     ? (inputEl.className = 'valid')
-//     : (inputEl.className = 'invalid');
-// });
+// console.log(typeof +inputText.dataset.length);
+// console.log(typeof inputText.value.length);
