@@ -1,3 +1,8 @@
+// Napisz skrypt do tworzenia galerii obrazów według tablicy danych. W HTML znajduje się lista ul.gallery. Użyj tablicy obiektów images w celu utworzenia elementów <img> umieszczonych w <li>. Aby utworzyć znacznik użyj template strings i metody insertAdjacentHTML().
+
+// Wszystkie elementy galerii powinny być dodawane do DOM podczas jednej operacji.
+// Ulepsz galerię używając flexboxów lub gridów poprzez klasy CSS.
+
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
