@@ -8,7 +8,7 @@
 const btnCreate = document.querySelector("button[data-create]");
 const btnDestroy = document.querySelector("button[data-destroy]");
 const divElement = document.querySelector("#boxes");
-const quantity = document.querySelector(".frame");
+const quantity = document.querySelector("#controls input[type=number]").value;
 
 quantity.onblur = (e) => {
   console.log(e.target.value);
@@ -28,12 +28,14 @@ function createBox(quantity) {
   box.style.backgroundColor = `getRandomHexColor()`;
   divElement.append(box);
 }
-function handler() {
+
+function insertBoxes() {
   createBox(quantity);
 }
+
 function destroyBoxes() {
   divElement.innerHTML = "";
 }
 
-btnCreate.addEventListener(`click`, handler);
+btnCreate.addEventListener(`click`, insertBoxes);
 btnDestroy.addEventListener(`click`, destroyBoxes);
