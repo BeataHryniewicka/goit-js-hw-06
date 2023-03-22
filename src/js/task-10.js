@@ -4,19 +4,15 @@
 // Wszystkie elementy powinny mieć losowy kolor tła w formacie NEX. Użyj gotowej funkcji getRandomHexColor aby otrzymać kolor.
 // Utwórz funkcję destroyBoxes(), która usuwa zawartość div#boxes, tym samym usuwając wszystkie utworzone elementy.
 
-// div.innerHTML = `width =30px height =30px`
-// const element = document. createElement("div");
-// div.append(element);
-
 //.................................
 const btnCreate = document.querySelector("button[data-create]");
 const btnDestroy = document.querySelector("button[data-destroy]");
-const divNew = document.querySelector("#boxes");
-const amount = document.querySelector(`input[type = "number"].value`);
-console.log(amount);
+const divElement = document.querySelector("#boxes");
+const quantity = document.querySelector(".frame");
 
-// let divWidth = (divNew.style.width = `30px`);
-// let divHeight = (divNew.style.height = `30px`);
+quantity.onblur = (e) => {
+  console.log(e.target.value);
+};
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -24,17 +20,20 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-btnCreate.addEventListener(`click`, () => {
-  divNew.style.backgroundColor = getRandomHexColor();
-  const el = document.createElement("div");
-  let elvWidth = (el.style.width = `30px`);
-  let elHeight = (el.style.height = `30px`);
-  el.style.backgroundColor = getRandomHexColor();
-  divNew.appendChild(el);
-});
-
+function createBox(quantity) {
+  for (let i = 0; i <= quantity; i++);
+  const box = document.createElement("div");
+  box.style.width = `(30 + 10*i)px`;
+  box.style.heigth = `(30 + 10*i)px`;
+  box.style.backgroundColor = `getRandomHexColor()`;
+  divElement.append(box);
+}
+function handler() {
+  createBox(quantity);
+}
 function destroyBoxes() {
-  divNew.innerHTML = null;
+  divElement.innerHTML = "";
 }
 
+btnCreate.addEventListener(`click`, handler);
 btnDestroy.addEventListener(`click`, destroyBoxes);
