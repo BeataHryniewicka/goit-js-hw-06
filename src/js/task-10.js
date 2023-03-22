@@ -22,7 +22,7 @@ function getRandomHexColor() {
 
 function createBox(amount) {
   const arrayBoxes = [];
-  for (let i = 0; i < amount; i++) {
+  for (let i = 0; i < amount; i++) { 
     const box = document.createElement("div");
     box.style.width = `(30 + 10*i)px`;
     box.style.heigth = `(30 + 10*i)px`;
@@ -35,12 +35,12 @@ function createBox(amount) {
 function insertBoxes() {
   let boxesToAdd = createBox(quantity.value)
 	divElement.append(...boxesToAdd);
-  console.log(divElement)
+  console.log(boxesToAdd)
 }
 
 function destroyBoxes() {
 
-  quantity.value = " ";
+  quantity.value = null;
 }
 
 btnCreate.addEventListener(`click`, insertBoxes);
