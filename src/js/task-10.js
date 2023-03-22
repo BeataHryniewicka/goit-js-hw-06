@@ -35,6 +35,7 @@ function createBox(amount) {
 function insertBoxes() {
   const inputNumber = createBox(quantity.value);
   divElement.append(...inputNumber);
+  console.log(inputNumber)
 }
 
 function destroyBoxes() {
