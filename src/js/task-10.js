@@ -34,13 +34,13 @@ function createBox(amount) {
 
 function insertBoxes() {
   let boxesToAdd = createBox(quantity.value)
-	divElement.append(...boxesToAdd)
-  ;
+	divElement.append(...boxesToAdd);
   console.log(divElement)
 }
 
 function destroyBoxes() {
-  divElement.innerHTML = null;
+
+  quantity.value = " ";
 }
 
 btnCreate.addEventListener(`click`, insertBoxes);
