@@ -21,25 +21,26 @@ function getRandomHexColor() {
 }
 
 function createBox(amount) {
-  const arrayBoxes = [];
-  for (let i = 0; i < amount; i++) { 
+  const array = [];
+  for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     box.style.width = `(30 + 10*i)px`;
     box.style.heigth = `(30 + 10*i)px`;
     box.style.backgroundColor = `getRandomHexColor()`;
     arrayBoxes.push(box);
   }
-  return arrayBoxes;
+  return array;
 }
 
 function insertBoxes() {
-  let boxesToAdd = createBox(quantity.value)
-	divElement.append(...boxesToAdd);
-  console.log(boxesToAdd)
+  // let boxesToAdd = createBox(quantity.value)
+  // divElement.append(...boxesToAdd);
+
+  divElement.appendChild(...createBox(amount));
+  console.log(divElement);
 }
 
 function destroyBoxes() {
-
   quantity.value = null;
 }
 

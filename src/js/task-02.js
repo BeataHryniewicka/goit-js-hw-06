@@ -4,7 +4,6 @@
 // Doda do elementu klasę item.
 // Po czym umieści wszystkie <li> na liście podczas jednej operacji ul#ingredients.
 
-
 const ingredients = [
   "Potatoes",
   "Mushrooms",
@@ -18,11 +17,8 @@ const list = document.querySelector(`#ingredients`);
 for (let ingredient of ingredients) {
   const element = document.createElement(`li`);
   element.textContent = ingredient;
-  console.log(element.textContent);
   element.classList.add(`item`);
-  console.log(element.classList);
   list.append(element);
-  console.log(element);
 }
 
 // const list = document.querySelector(`#ingredients`);
@@ -31,5 +27,4 @@ for (let ingredient of ingredients) {
 //   item.classList.add(`item`);
 //   item.textContent = ingredient;
 //   list.append(item);
-//   console.log(item);
 // });
