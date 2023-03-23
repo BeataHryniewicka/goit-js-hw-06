@@ -5,45 +5,35 @@
 // Utwórz funkcję destroyBoxes(), która usuwa zawartość div#boxes, tym samym usuwając wszystkie utworzone elementy.
 
 //.................................
-const btnCreate = document.querySelector("button[data-create]");
-const btnDestroy = document.querySelector("button[data-destroy]");
-const divElement = document.querySelector("#boxes");
-const quantity = document.querySelector("#controls input[type=number]");
 
 // quantity.onblur = (e) => {
 //   console.log(e.target.value);
 // };
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
+const divElement = document.querySelector("#boxes");
+const quantity = document.querySelector("input[type='number']");
+const btnCreate = document.querySelector("button[data-create]");
+const btnDestroy = document.querySelector("button[data-destroy]");
+
+const getRandomHexColor = () =>
+  `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
-}
 
-function createBox(amount) {
-  const array = [];
+const createBox = (amount) => {
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
-    box.style.width = `(30 + 10*i)px`;
-    box.style.heigth = `(30 + 10*i)px`;
-    box.style.backgroundColor = `getRandomHexColor()`;
-    arrayBoxes.push(box);
+    box.style.width = 30 + 10 * i + `px`;
+    box.style.height = 30 + 10 * i + `px`;
+    box.style.backgroundColor = getRandomHexColor();
+    divElement.append(box);
   }
-  return array;
-}
+};
 
-function insertBoxes() {
-  // let boxesToAdd = createBox(quantity.value)
-  // divElement.append(...boxesToAdd);
-
-  divElement.appendChild(...createBox(amount));
-  console.log(divElement);
-}
+btnCreate.addEventListener("click", () => createBox(quantity.value));
 
 function destroyBoxes() {
   quantity.value = null;
+  divElement.innerHTML = null;
 }
-
-btnCreate.addEventListener(`click`, insertBoxes);
-
 btnDestroy.addEventListener(`click`, destroyBoxes);
